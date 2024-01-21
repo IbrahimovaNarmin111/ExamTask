@@ -1,0 +1,58 @@
+﻿@using ExamTask.Models;
+@using ExamTask.ViewModels;
+@model List<Setting>
+@{
+    int count =0;
+}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Striped Table</h4>
+                <a class="btn btn-primary rounded-pill" asp-controller="Setting" asp-action="Create">Create</a>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Key
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @item.Key
+                                    </td>
+                                    <td>
+                                        @item.Value
+                                    </td>
+                                    
+                                    <td>
+                                        <a class="btn btn-success rounded-pill" asp-controller="Setting" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                                        <a class="btn btn-danger rounded-pill" asp-controller="Setting" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</div>

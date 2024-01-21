@@ -1,0 +1,40 @@
+﻿@using ExamTask.Models;
+@model Team
+<div class="row">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Team</h4>
+            <p class="card-description">
+                Create Team
+            </p>
+            <form method="post" enctype="multipart/form-data" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="FullName">Fullname</label>
+                    <input asp-for="FullName" class="form-control"  placeholder="Fullname">
+                    <span asp-validation-for="FullName" style="color:red"></span>
+                </div>
+                <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" placeholder="Description">
+                        <span asp-validation-for="Description" style="color:red"></span>
+                </div>
+                    <div class="form-group">
+                        <label asp-for="Work">Work</label>
+                        <input asp-for="Work" class="form-control" placeholder="Work">
+                        <span asp-validation-for="Work" style="color:red"></span>
+                    </div>
+                 
+                    <div class="form-group">
+                        <label asp-for="ImageFile">Image</label>
+                        <input asp-for="ImageFile" class="form-control" placeholder="Image">
+                        <span asp-validation-for="ImageFile" style="color:red"></span>
+                    </div>
+               
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a asp-controller="Team" asp-action="Index" class="btn btn-light">Go Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
